@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./csslar/yangiish.css">
+</head>
+<body>
+    <form>
+    <div id="ish">
+       <h3>Registration</h3>
+       <br>
+       <label for="Full" id="Fullname">Full Name</label><br>
+       <input type="text" id="Full" placeholder="Enter your Name">
+
+       <label for="User" id="Username">User Name</label>
+       <input type="text" id="User" placeholder="Enter your username">
+       <br>
+
+       <label for="email" id="Email">Email</label><br>
+       <input type="email" id="email" placeholder="Enter your Email">
+
+       <label for="Phone" id="phone">Phone number</label>
+       <input type="number" id="Phone" placeholder="Enter your phone number">
+       <br>
+       <label for="pass" id="password">Password</label><br>
+       <input type="password" id="pass" placeholder="Enter your password">
+
+       <label for="User" id="confirmPassword">Confirm Password</label>
+       <input type="password" id="confirm" placeholder="Enter your confirm password">
+       <br>
+       <h2>Gender</h2>
+       <label class="odam" for="Male">Male</label>
+       <input class="odam" type="radio" name="Male" id="Male">
+       <label class="odam" for="Female">Female</label>
+       <input class="odam" type="radio" name="Female" id="Female">
+       <label class="odam" for="Prevent">Prevent not to say</label>
+       <input class="odam" type="radio" name="Prevent" id="Prevent"><br>
+       <button onclick="checkinput()" >Register</button>
+
+    </div>
+    
+    <div id="rasm">
+        <img src="./rasmlar/photo_2023-07-16_11-45-22.jpg" alt="">
+    </div>
+  </form>
+    <script>
+        function checkinput(){
+            const FullnameLabel=document.getElementById('Fullname')
+            const fullNameInput=document.getElementById('Full').value
+            
+            const UsernameLabel=document.getElementById('Username')
+            const UserNameInput=document.getElementById('User').value
+            
+            const EmailLabel=document.getElementById('Email')
+            const email=document.getElementById('email').value
+            
+            const phoneLabel=document.getElementById('Phone')
+            const Phone=document.getElementById('phone').value
+            
+            const passwordLabel=document.getElementById('password')
+            const pass=document.getElementById('pass').value
+            
+            const confirmPassword=document.getElementById('confirmPassword')
+            const confirm=document.getElementById('confirm').value
+
+            const odam=gender.getElementsByClassName('odam')
+
+            let alertText
+            if (!fullNameInput) {
+                FullnameLabel.style.color="red"
+                alertText="Fullname to'ldirilmagan"
+            }else if(!UserNameInput){
+                UsernameLabel.style.clor="red"
+                alertText="Username toldirilmagan"
+            }
+            else if(!email){
+                EmailLabel.style.clor="red"
+                alertText="Email toldirilmagan"
+            }else if(!Phone){       
+                phoneLabel.style.clor="red"
+                alertText="Phone number toldirilmagan"
+            }else if(!pass){
+                passwordLabel.style.clor="red"
+                alertText="Password toldirilmagan"
+            }else if(!confirm){
+                confirmPassword.style.clor="red"
+                alertText="Kodni yonidagi katakchaga kiritin"
+            }else if(pass==confirm){
+                pass,confirm.style.clor="red"
+                alertText="Kod bir biriga ms emas "
+            }
+            else if(!odam){
+                alertText="Gender kiriting"
+            }
+            if(alertText){
+                alert(alertText)
+            }else{
+                alertText="Siz royhatdan otdiz"
+                alert(alertText)
+            }
+        }
+    </script>
+</body>
+</html>
